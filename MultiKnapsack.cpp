@@ -18,10 +18,8 @@ int main() {
                 c[n1] = y * s;
         }
         for (int i = 1;i <= n;i ++)
-                for (int j = m;j >= w[i];j --) {
-                        x = f[j - w[i]] + c[i];
-                        if (x > f[j]) f[j] = x;
-                }
+                for (int j = m;j >= w[i];j --)
+                        f[j] = max(f[j - w[i]] + c[i],f[j]);
         cout << f[m];
         return 0;
 }
