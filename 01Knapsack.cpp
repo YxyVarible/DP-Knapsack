@@ -7,7 +7,7 @@ int main() {
                 cin >> w[i] >> c[i];
         for (int i = 1;i <= n;i ++)
                 for (int j = m;j >= 1;j --)
-                        f[j] = (w[i] <= j)? max(f[j],f[j - w[i]] + c[i]) : f[j];
+                        if (w[i] <= j) f[j] = max(f[j],f[j - w[i]] + c[i]);
         cout << f[m] << endl;
         return 0;
 }
